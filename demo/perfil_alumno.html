@@ -35,9 +35,16 @@
                         <li class="sidebar-title">Menu</li>
 
                         <li class="sidebar-item  ">
-                            <a href="index.html" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Dashboard</span>
+                            <a href="post-application.html" class='sidebar-link'>
+                                <i class="bi bi-chat-square-quote"></i>
+                                <span>Publicaciones</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item  ">
+                            <a href="perfil_usuario.html" class='sidebar-link'>
+                                <i class="bi bi-person-lines-fill"></i>
+                                <span>Mi Perfil</span>
                             </a>
                         </li>
 
@@ -70,7 +77,7 @@
                                         <li>
                                             <h6 class="dropdown-header" >Mail</h6>
                                         </li>
-                                        <li><a class="dropdown-item"href="post-application">Ver Publicaciones</a></li>
+                                        <li><a class="dropdown-item" href="post-application.html">Ver Publicaciones</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown me-3">
@@ -78,20 +85,15 @@
                                         aria-expanded="false">
                                         <i class='bi bi-bell bi-sub fs-4 text-gray-600'></i>
                                     </a>
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                                        <li>
-                                            <h6 class="dropdown-header" >Mail</h6>
-                                        </li>
-                                        <li><a class="dropdown-item" href="post-application.html">Ver Publicaciones</a></li>
-                                    </ul>
+                                    
                                 </li>
                             </ul>
                             <div class="dropdown">
                                 <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="user-menu d-flex">
                                         <div class="user-name text-end me-3">
-                                            <h6 class="mb-0 text-gray-600">John Ducky</h6>
-                                            <p class="mb-0 text-sm text-gray-600">Administrator</p>
+                                            <h6 class="mb-0 text-gray-600">Bienvenido</h6>
+                                            <p class="mb-0 text-sm text-gray-600">Alumno</p>
                                         </div>
                                         <div class="user-img d-flex align-items-center">
                                             <div class="avatar avatar-md">
@@ -102,7 +104,7 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                                     <li>
-                                        <h6 class="dropdown-header">Hello, John!</h6>
+                                        <h6 class="dropdown-header"></h6>
                                     </li>
                                     <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-person me-2"></i> My
                                             Profile</a></li>
@@ -113,8 +115,8 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#"><i
-                                                class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                                    <li onClick="test()"><a class="dropdown-item" href="#"><i
+                                                class="icon-mid bi bi-box-arrow-left me-2" ></i> Logout</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -255,6 +257,13 @@
         window.onload = datos_usuario_busqueda()
     </script>
     <script>
+
+        function test(){
+            location.href = "auth-login.html"
+            sessionStorage.removeItem("Usuario")
+        }
+
+
         window.onload = obtener_cursos(sessionStorage.getItem("Busqueda"))
     </script>
     <script src="assets/js/main.js"></script>

@@ -33,9 +33,16 @@
                         <li class="sidebar-title">Menu</li>
 
                         <li class="sidebar-item  ">
-                            <a href="index.html" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Dashboard</span>
+                            <a href="post-application.html" class='sidebar-link'>
+                                <i class="bi bi-chat-square-quote"></i>
+                                <span>Publicaciones</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item  ">
+                            <a href="perfil_usuario.html" class='sidebar-link'>
+                                <i class="bi bi-person-lines-fill"></i>
+                                <span>Mi Perfil</span>
                             </a>
                         </li>
 
@@ -100,7 +107,7 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                                    
-                                    <li><a class="dropdown-item" href="auth-login.html"><i
+                                    <li onClick=" test()"><a class="dropdown-item" href="auth-login.html"><i
                                         class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
                                 </ul>
                             </div>
@@ -282,6 +289,11 @@
     <script src="Functions/user_functions.js"></script>
     <script>
         window.onload = datos_usuario()
+
+        function test(){
+            location.href = "auth-login.html"
+            sessionStorage.removeItem("Usuario")
+        }
     </script> 
     <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
