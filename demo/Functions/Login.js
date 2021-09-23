@@ -26,8 +26,9 @@ function login(event){
             'User': response.exist
         }
         if (objetoRespuesta.User == true){
-            location.href = "perfil_usuario.html"
+            location.href = "post-application.html"
             sessionStorage.setItem("Usuario", response.carnet)
+            sessionStorage.setItem("NombreUsuario", response.nombre)
             console.log(sessionStorage.getItem("Usuario"))
         }else{
             console.log("No se inició sesión")

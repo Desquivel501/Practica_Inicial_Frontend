@@ -12,6 +12,12 @@ function buscarUsuario(){
         })
         .then(response =>{
             console.log(response)
-            alert("Nombre: " + response.Nombre)
+            // alert("Nombre: " + response.Nombre)
+
+            if (response.Mensaje == "Existe"){
+                sessionStorage.setItem("Busqueda", response.Carnet)
+                location.href = "perfil_alumno.html"
+            }
+           
         })
 }

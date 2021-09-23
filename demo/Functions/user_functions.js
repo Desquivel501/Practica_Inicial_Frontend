@@ -3,10 +3,7 @@ function carga_cursos(){
     var cadena = ''
     var select = document.getElementById('cursos_select')
     fetch("http://192.168.0.13:3000/cursos",{
-    method: 'GET',
-    headers: {
-        'content-type': 'application/json',
-        'Access-Control-Allow-Origin':'*',}})
+    method: 'GET'})
     .then(res=>res.json())
     .catch(err=>{
         console.log('Error',err)
@@ -44,7 +41,7 @@ function agregar_curso(){
         console.log(response)
         alert(response.mensaje)
     })
-    obtener_cursos()
+    obtener_cursos(carnet)
 
 }
 

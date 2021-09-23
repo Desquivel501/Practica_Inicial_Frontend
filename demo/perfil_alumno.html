@@ -68,9 +68,9 @@
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                                         <li>
-                                            <h6 class="dropdown-header">Mail</h6>
+                                            <h6 class="dropdown-header" >Mail</h6>
                                         </li>
-                                        <li><a class="dropdown-item" href="#">No new mail</a></li>
+                                        <li><a class="dropdown-item"href="post-application">Ver Publicaciones</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown me-3">
@@ -80,9 +80,9 @@
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                                         <li>
-                                            <h6 class="dropdown-header">Notifications</h6>
+                                            <h6 class="dropdown-header" >Mail</h6>
                                         </li>
-                                        <li><a class="dropdown-item">No notification available</a></li>
+                                        <li><a class="dropdown-item" href="post-application.html">Ver Publicaciones</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -132,10 +132,16 @@
                             </div>
                             <div class="col-12 col-md-6 order-md-2 order-first">
                                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                                    <script src="assets/js/search.js"></script>
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Layout Vertical Navbar
-                                        </li>
+                                        <div class="form-group position-relative has-icon-left" style="padding-right:40px">
+                                            <input class="form-control border-end-0 border rounded-pill" type="text" value=""  placeholder="Ingrese el numero de Carnet" id="barraBusqueda" style="width: 110%; box-shadow: 0 2px 4px 0 rgba(90,141,238,.6);">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-search" style="color: rgb(0, 0, 0); padding-right:10px"></i>
+                                            </div>
+                                            
+                                        </div>
+                                        <button class="btn btn-primary" style= "height: 40px; box-shadow: 0 2px 4px 0 rgba(90,141,238,.6);" onClick="buscarUsuario()">Buscar</button>
                                     </ol>
                                 </nav>
                             </div>
@@ -239,19 +245,6 @@
                         </section>
                     
                 </div>
-                
-
-                <footer>
-                    <div class="footer clearfix mb-0 text-muted">
-                        <div class="float-start">
-                            <p>2021 &copy; Mazer</p>
-                        </div>
-                        <div class="float-end">
-                            <p>Crafted with <span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span>
-                                by <a href="https://ahmadsaugi.com">Saugi</a></p>
-                        </div>
-                    </div>
-                </footer>
             </div>
         </div>
     </div>
