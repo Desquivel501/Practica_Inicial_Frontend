@@ -1,21 +1,19 @@
-function register(){
-    var name = document.getElementById("name").value
-    var lastname = document.getElementById("lastname").value
-    var carnet = document.getElementById("registro").value
-    var correo = document.getElementById("mail").value
+function forgot_pass(){
+    var mail = document.getElementById("mail").value
+    var carnet = document.getElementById("carnet").value
     var password = document.getElementById("password").value
     var confirm_password = document.getElementById("confirm_password").value
-    var objeto = {
-        'name': name,
-        'lastname': lastname,
+    objeto = {
+        'mail': mail,
         'carnet': carnet,
-        'mail': correo,
-        'password': password
+        'newpassword': password
+
     }
+
     if (password != confirm_password){
         alert("Las contraseñas no coinciden")
     }else{
-        fetch("http://192.168.0.13:3000/register ", {
+        fetch("http://192.168.0.13:3000/forgot_password ", {
         method: 'POST',
         body: JSON.stringify(objeto),
         headers:{
@@ -29,12 +27,9 @@ function register(){
         .then(response =>{
             console.log(response)
             alert(response.mensaje)
-        if (response.register == true){
+        if (response.modified == true){
             location.href = "auth-login.html"
         }
-            
-    })
-
+        })
     }
-
 }

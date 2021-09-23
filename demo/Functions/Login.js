@@ -1,14 +1,12 @@
 function login(event){
+    sessionStorage.removeItem("Usuario")
     event.preventDefault();
-    var user = document.getElementById("inputUser").value
+    var carnet = document.getElementById("inputCarnet").value
     var password = document.getElementById("inputPassword").value
     var objeto = {
-        'user': user,
+        'carnet': carnet,
         'password': password
     }
-    console.log(user)
-    console.log(password)
-    console.log(objeto)
     fetch("http://192.168.0.13:3000/login", {
         method: 'POST',
         body: JSON.stringify(objeto),
@@ -27,14 +25,23 @@ function login(event){
             'Mensaje': response.mensaje,
             'User': response.exist
         }
-        if (objetoRespuesta.exist == true){
-            location.href()
+        if (objetoRespuesta.User == true){
+            location.href = "perfil_usuario.html"
+            sessionStorage.setItem("Usuario", response.carnet)
+            console.log(sessionStorage.getItem("Usuario"))
         }else{
-            console.log("No se inición sesión")
+            console.log("No se inició sesión")
         }
 
     })
 }
+
+function logout(){
+    location.href = "auth-login.html"
+    sessionStorage.removeItem("Usuario")
+}
+
+
 
 
 
